@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hive_hooks_depository/colors.dart';
-import 'package:flutter_hive_hooks_depository/memorisation_model.dart';
+import 'package:memo/colors.dart';
+import 'package:memo/memorisation_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: milk,
           floatingActionButtonTheme:
               FloatingActionButtonThemeData(backgroundColor: red),
-          dialogTheme: DialogTheme(backgroundColor: milk)),
+          dialogTheme: DialogTheme(
+            backgroundColor: milk,
+          )),
       home: const MyHomePage(),
     );
   }
@@ -291,9 +293,12 @@ class MyHomePageState extends State<MyHomePage> {
                             shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)))),
-                        child: const Text(
+                        child: Text(
                           "Ajouter un nouveau mot",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                            fontSize: 22,
+                            color: milk,
+                          ),
                         ),
                       )
                     ],
